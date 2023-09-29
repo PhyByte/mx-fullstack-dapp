@@ -4,17 +4,11 @@ import { Network } from './types';
 export const MVX_NETWORK: Network = import.meta.env.VITE_MVX_NETWORK as Network;
 
 //------------------------------------------------
-//------------  TOKEN DECIMALS -------------------
-//------------------------------------------------
-export const USDC_DECIMAL = 6;
-export const BKT_DECIMAL = 18;
-export const EGLD_DECIMAL = 18;
-
-//------------------------------------------------
 //------------  Mainnet Config -------------------
 //------------------------------------------------
 const MAINNET_API = 'https://api.multiversx.com';
 const MAINNET_PROXY = 'https://gateway.multiversx.com';
+
 //------------------------------------------------
 //------------  Devnet Config --------------------
 //------------------------------------------------

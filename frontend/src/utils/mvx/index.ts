@@ -15,13 +15,13 @@ export const selectDependingOnNetwork = (
 
     default: {
       console.error(`MVX_NETWORK: ${MVX_NETWORK} is not a valid network!!!`);
-      process.exit();
+      throw new Error(`MVX_NETWORK: ${MVX_NETWORK} is not a valid network!!!`);
     }
   }
 };
 
 export const formatEsdtAmount = (amount: number, decimal: number) => {
-  if (isNaN(Number(amount))) {
+  if (isNaN(Number(amount)) || isNaN(Number(decimal))) {
     return 0;
   }
 
