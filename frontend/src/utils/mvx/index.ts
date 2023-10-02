@@ -1,21 +1,22 @@
-import { MVX_NETWORK } from './constants';
+import { Network } from "./types";
 
 export const selectDependingOnNetwork = (
+  network: Network,
   mainnetValue: string,
-  devnetValue: string,
+  devnetValue: string
 ) => {
-  switch (MVX_NETWORK) {
-    case 'mainnet': {
+  switch (network) {
+    case Network.MAINNET: {
       return mainnetValue;
     }
 
-    case 'devnet': {
+    case Network.DEVNET: {
       return devnetValue;
     }
 
     default: {
-      console.error(`MVX_NETWORK: ${MVX_NETWORK} is not a valid network!!!`);
-      throw new Error(`MVX_NETWORK: ${MVX_NETWORK} is not a valid network!!!`);
+      console.error(`MVX_NETWORK: ${network} is not a valid network!!!`);
+      throw new Error(`MVX_NETWORK: ${network} is not a valid network!!!`);
     }
   }
 };

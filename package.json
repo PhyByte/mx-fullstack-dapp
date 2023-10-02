@@ -1,0 +1,21 @@
+{
+    "name": "fullstack-project",
+    "private": true,
+    "scripts": {
+      "install": "npm run install:frontend && npm run install:backend",
+      "install:frontend": "cd frontend && npm install",
+      "install:backend": "cd backend && npm install",
+      "build": "npm run build:frontend && npm run build:backend",
+      "build:frontend": "cd frontend && npm run build",
+      "build:backend": "cd backend && npm run build",
+      "test": "npm run test:frontend && npm run test:backend",
+      "test:frontend": "cd frontend && npm test",
+      "test:backend": "cd backend && npm test",
+      "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+      "start:frontend": "cd frontend && npm run dev",
+      "start:backend": "cd backend && npm run build && npm run start"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.1"
+    }
+}
