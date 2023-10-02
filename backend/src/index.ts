@@ -21,5 +21,5 @@ app.get("/up", (req: Request, res: Response) => {
 const server = http.createServer(app);
 
 server.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  console.log(`⚡️[server]: Server is running`);
 });
