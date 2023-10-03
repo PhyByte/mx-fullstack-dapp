@@ -13,8 +13,7 @@ function path(root: string, subLink: string) {
 
 export const ROUTES = {
   home: path("", "/"),
-  overview: path("", "/overview"),
-  unlock: path("", "/unlock"),
+  overview: path("", "/overview")
 };
 
 interface LinkItemProps {
@@ -39,16 +38,8 @@ export const routes: Array<LinkItemProps> = [
     path: ROUTES.overview,
     title: "Overview",
     icon: HiOutlineDatabase,
-    authenticatedRoute: false,
+    authenticatedRoute: true,
     activeIcon: HiDatabase,
-    enabled: true,
-  },
-  {
-    path: ROUTES.unlock,
-    title: "Unlock",
-    icon: HiOutlineLockOpen,
-    authenticatedRoute: false,
-    activeIcon: HiLockOpen,
     enabled: true,
   },
 ];

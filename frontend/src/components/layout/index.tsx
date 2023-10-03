@@ -1,18 +1,12 @@
-
-import { ROUTES, routes } from '@/router/paths';
-import {
-  Box,
-  Drawer,
-  DrawerContent,
-  useDisclosure,
-  useMediaQuery,
-} from '@chakra-ui/react';
-import { AuthenticatedRoutesWrapper } from '@multiversx/sdk-dapp/wrappers';
-import { Outlet } from 'react-router-dom';
+import { ROUTES, routes } from "@/utils/router/paths";
+import { Box, useDisclosure, useMediaQuery } from "@chakra-ui/react";
+import { AuthenticatedRoutesWrapper } from "@multiversx/sdk-dapp/wrappers";
+import { Outlet } from "react-router-dom";
+import TopBar from "./topbar";
 
 const Layout = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isDesktop] = useMediaQuery('(min-width: 1200px)');
+  const [isDesktop] = useMediaQuery("(min-width: 1200px)");
 
   if (isDesktop && isOpen) {
     onClose();
@@ -20,7 +14,7 @@ const Layout = () => {
 
   return (
     <>
-      {/* <TopBar onOpen={onOpen} /> */}
+      <TopBar onOpen={onOpen} />
       <Box
         // backgroundImage={APP_IMAGES.mainBackground}
         backgroundSize="cover"
@@ -32,7 +26,7 @@ const Layout = () => {
       >
         <AuthenticatedRoutesWrapper
           routes={routes}
-          unlockRoute={`${ROUTES.unlock}`}
+          unlockRoute={`${ROUTES.home}`}
         >
           <Box maxW="8xl" mx="auto">
             <Outlet />
