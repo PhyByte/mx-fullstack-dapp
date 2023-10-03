@@ -5,7 +5,7 @@ import morgan from "morgan";
 dotenv.config();
 
 export const app: Express = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 app.set("trust proxy", true);
 app.use(json({ limit: "50mb" }));

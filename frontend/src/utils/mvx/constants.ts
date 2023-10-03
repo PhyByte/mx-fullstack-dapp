@@ -1,18 +1,15 @@
 import { selectDependingOnNetwork } from ".";
-import { MVX_NETWORK } from "./types";
+import { Network } from "./types";
 
-//------------------------------------------------
-//------------  Mainnet Config -------------------
-//------------------------------------------------
-const MAINNET_API = "https://api.multiversx.com";
-const MAINNET_PROXY = "https://gateway.multiversx.com";
+export const MVX_NETWORK: Network = import.meta.env.VITE_MVX_NETWORK as Network;
+export const MAINNET_API = import.meta.env.VITE_MAINNET_API as string;
+export const MAINNET_PROXY = import.meta.env.VITE_MAINNET_PROXY as string;
 
-//------------------------------------------------
-//------------  Devnet Config --------------------
-//------------------------------------------------
-const DEVNET_API = "https://devnet-api.multiversx.com";
-const DEVNET_PROXY = "https://devnet-gateway.multiversx.com";
+export const DEVNET_PROXY = import.meta.env.VITE_DEVNET_PROXY as string;
+export const DEVNET_API = import.meta.env.VITE_DEVNET_API as string;
 
-export const getChainId = () => selectDependingOnNetwork(MVX_NETWORK,'1', 'D');
-export const getApiUrl = () => selectDependingOnNetwork(MVX_NETWORK,MAINNET_API, DEVNET_API);
-export const getProxyUrl = () => selectDependingOnNetwork(MVX_NETWORK,MAINNET_PROXY, DEVNET_PROXY);
+export const getChainId = () => selectDependingOnNetwork(MVX_NETWORK, "1", "D");
+export const getApiUrl = () =>
+  selectDependingOnNetwork(MVX_NETWORK, MAINNET_API, DEVNET_API);
+export const getProxyUrl = () =>
+  selectDependingOnNetwork(MVX_NETWORK, MAINNET_PROXY, DEVNET_PROXY);
