@@ -12,7 +12,7 @@ import { DappProvider } from "@multiversx/sdk-dapp/wrappers";
 
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
-import { MVX_NETWORK } from "./utils/mvx/types";
+import { MVX_NETWORK } from "./utils/mvx/constants";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
