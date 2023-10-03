@@ -1,19 +1,9 @@
-import { ROUTES } from '@/utils/router/paths';
-import {
-  Button,
-  Card,
-  CardBody,
-  Center,
-  Image,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { VStack } from "@chakra-ui/react";
 
 export default function PageNotFound() {
   return (
     <VStack justifyContent="center">
-    
+      <h1>Page Not Found</h1>
     </VStack>
   );
 }
