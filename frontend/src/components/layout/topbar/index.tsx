@@ -6,6 +6,7 @@ import {
   useColorModeValue,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { UserDrawer } from "../userDrawer/userDrawer";
 import { useGetTitle } from "../utils";
 
 interface TopBarProps extends FlexProps {
@@ -35,6 +36,8 @@ const TopBar = ({ onOpen, ...rest }: TopBarProps) => {
       <Spacer display={isLarge ? "none" : "flex"} />
       <Heading as="h4">{title}</Heading>
       <Spacer display={isLarge ? "none" : "flex"} />
+      <Spacer display={{ base: "flex", md: "flex" }} />
+      <UserDrawer />
     </Flex>
   );
 };
