@@ -1,5 +1,5 @@
 
-import Layout from '@/layout';
+import Layout from '@/components/layout';
 import Home from '@/pages/Home/Home';
 import Overview from '@/pages/Overview/Overview';
 import PageNotFound from '@/pages/PageNotFound';
