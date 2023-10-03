@@ -1,48 +1,73 @@
-{
-  // compilerOptions contains settings that specify how the compiler should behave
+/**
+ * Main TypeScript Configuration File (tsconfig.json)
+ *
+ * This configuration file targets the TypeScript settings for the main
+ * project, covering options like module resolution, JSX, and strict typing.
+ *
+ * For more information on TypeScript configuration options, visit:
+ * https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+ */
+ {
   "compilerOptions": {
-    // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 'ES2021', or 'ESNext'
-    "target": "ES2020",
-    // Ensure useDefineForClassFields is true for compatibility with certain class features
+    // Set the target ECMAScript version for output code
+    "target": "ESNext",
+
+    // Enable ECMAScript class fields
     "useDefineForClassFields": true,
-    // Include additional library files in the compilation
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    // Specify module code generation
-    "module": "ESNext",
-    // Skip type checking of all declaration files (*.d.ts)
+
+    // Specify library files to be included in the compilation
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    // Disallow JavaScript files to be compiled
+    "allowJs": false,
+
+    // Skip type checking of declaration files
     "skipLibCheck": true,
 
-    /* Bundler mode */
-    // Resolve modules using bundler, it's a workaround for vite which uses this resolution strategy
-    "moduleResolution": "bundler",
-    // Allow importing files with TypeScript (.ts) extension
-    "allowImportingTsExtensions": true,
-    // Include modules imported with .json extension
+    // Disable emitting helpers for interop between CommonJS and ES Modules
+    "esModuleInterop": false,
+
+    // Allow default imports from modules with no default export
+    "allowSyntheticDefaultImports": true,
+
+    // Enable strict typing and catch potential issues during development
+    "strict": true,
+
+    // Disallow inconsistently-cased references to the same file
+    "forceConsistentCasingInFileNames": true,
+
+    // Set the module code generation to the latest ECMAScript version
+    "module": "ESNext",
+
+    // Use Node.js-style module resolution
+    "moduleResolution": "Node",
+
+    // Enable importing JSON modules
     "resolveJsonModule": true,
-    // Unconditionally emit imports for side-effects only
+
+    // Ensure that every file can be safely transpiled without errors
     "isolatedModules": true,
-    // Do not emit outputs (useful for type-checking only scenarios)
+
+    // Disable emitting output files
     "noEmit": true,
-    // Support JSX in .tsx files: 'react' or 'react-jsx'
+
+    // Set the JSX factory for React
     "jsx": "react-jsx",
 
-    /* Linting */
-    // Enable all strict type-checking options
-    "strict": true,
-    // Report errors on unused locals
-    "noUnusedLocals": true,
-    // Report errors on unused parameters
-    "noUnusedParameters": true,
-    // Report error when not all code paths in switch statement explicitly break or return
-    "noFallthroughCasesInSwitch": true
+    // Set the base URL for module resolution
+    "baseUrl": "./",
+
+    // Configure custom path aliases
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    // Specify the location of custom type definitions
+    "typeRoots": ["src/types/*"]
   },
-  // include specifies a list of glob-like file patterns to include in compilation
-  "include": ["src"],
-  // Project references are a way to structure TypeScript programs into smaller pieces
-  "references": [
-    {
-      // Path to referenced project configuration file or folder containing tsconfig.json
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  // Include files and folders in the TypeScript compilation
+  "include": ["src", "*.ts"],
+
+  // Add references to other TypeScript configuration files
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
