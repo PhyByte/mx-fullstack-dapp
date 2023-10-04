@@ -24,11 +24,6 @@ export const UserDrawer = () => {
   const [isDesktop] = useMediaQuery('(min-width: 1200px)');
   const { address } = useGetAccount();
 
-  const account = useGetAccount();
-  const accountInfo = useGetAccountInfo();
-  console.log('account', account);
-  console.log('accountInfo', accountInfo);
-
   const handleLogout = () => {
     logout(`${window.location.origin}`);
   };

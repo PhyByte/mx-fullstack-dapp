@@ -1,0 +1,5 @@
+{
+  "watch": [".env"],
+  "ext": "",
+  "exec": "npm ci && npm run dev"
+}

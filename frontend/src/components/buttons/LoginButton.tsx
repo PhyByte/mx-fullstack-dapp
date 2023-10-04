@@ -1,5 +1,5 @@
-import { ROUTES } from '@/utils/router/paths';
-import { UnlockIcon } from '@chakra-ui/icons';
+import { ROUTES } from "@/utils/router/paths";
+import { UnlockIcon } from "@chakra-ui/icons";
 import {
   Button,
   Center,
@@ -11,14 +11,14 @@ import {
   ModalHeader,
   ModalOverlay,
   VStack,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   ExtensionLoginButton,
   LedgerLoginButton,
   WalletConnectLoginButton,
   WebWalletLoginButton,
-} from '@multiversx/sdk-dapp/UI';
-import { useState } from 'react';
+} from "@multiversx/sdk-dapp/UI";
+import { useState } from "react";
 
 const LoginButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,7 @@ const LoginButton = () => {
     <Flex justify="center">
       <Button
         leftIcon={<UnlockIcon />}
-        borderColor={'primary.200'}
+        borderColor={"primary.200"}
         onClick={openModal}
         colorScheme="green"
         h="10"
@@ -51,7 +51,7 @@ const LoginButton = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <VStack spacing="3" >
+            <VStack spacing="3">
               <ExtensionLoginButton
                 className="button button-primary wFull"
                 callbackRoute={ROUTES.home}
@@ -63,26 +63,26 @@ const LoginButton = () => {
                 callbackRoute={ROUTES.home}
                 className="button button-primary wFull"
               >
-                {/* {translate(LOCALES.login.button.webWallet)} */}
+                Web Wallet
               </WebWalletLoginButton>
               <WalletConnectLoginButton
                 callbackRoute={ROUTES.home}
                 className="button button-primary wFull"
                 isWalletConnectV2={true}
                 onModalCloses={() => {
-                  console.log('WalletConnect modal closed');
+                  console.log("WalletConnect modal closed");
                 }}
               >
-                {/* {translate(LOCALES.login.button.xPortal)} */}
+                X Portal
               </WalletConnectLoginButton>
               <LedgerLoginButton
                 callbackRoute={ROUTES.home}
                 className="button button-primary wFull"
                 onModalCloses={() => {
-                  console.log('Ledger modal closed');
+                  console.log("Ledger modal closed");
                 }}
               >
-                {/* {translate(LOCALES.login.button.ledger)} */}
+                Ledger
               </LedgerLoginButton>
             </VStack>
           </ModalBody>
