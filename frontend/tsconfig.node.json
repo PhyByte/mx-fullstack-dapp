@@ -1,20 +1,26 @@
+//
+//  * TypeScript Configuration for Node.js (tsconfig.node.json)
+//  *
+//  * This configuration file targets the TypeScript settings specifically
+//  * for the Vite configuration file (vite.config.ts).
+//  *
+//  * For more information on TypeScript configuration options, visit:
+//  * https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+//  */
 {
-  // compilerOptions contains settings that specify how the compiler should behave
   "compilerOptions": {
-    // Enable project compilation - allowing projects to be built together
+    // Enable project references for TypeScript projects
     "composite": true,
-    // Skip type checking of all declaration files (*.d.ts)
-    "skipLibCheck": true,
-    // Specify module code generation: 'CommonJS', 'AMD', 'System', 'UMD', 'ES6', 'ES2015', 'ES2020', 'ESNext', 'None', or 'preserve'
+
+    // Set the module code generation to the latest ECMAScript version
     "module": "ESNext",
-    // Resolve modules using bundler, it's a workaround for vite which uses this resolution strategy
-    "moduleResolution": "bundler",
+
+    // Use Node.js-style module resolution
+    "moduleResolution": "Node",
+
     // Allow default imports from modules with no default export
     "allowSyntheticDefaultImports": true
   },
-  // include specifies a list of glob-like file patterns to include in compilation
-  "include": [
-    // include vite configuration file in the compilation
-    "vite.config.ts"
-  ]
+  // Apply this configuration only to the Vite configuration file
+  "include": ["vite.config.ts"]
 }
